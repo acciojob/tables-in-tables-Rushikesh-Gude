@@ -1,2 +1,99 @@
+html,body{height:100%;margin:0;font-family: "Times New Roman", Times, serif;background:#fff}
+  .page-wrap{
+    box-sizing:border-box;
+    margin:14px;
+    padding:14px;
+    /* outer double look: thick outer border + inner offset border created by padding */
+    border:5px solid #222;
+  }
 
-/* Your CSS Code here. */
+  /* outer table that splits page into 2x2 cells */
+  table.outer{
+    width:100%;
+    border-collapse:collapse;
+    table-layout:fixed;
+  }
+  table.outer td{
+    vertical-align:top;
+    width:50%;
+    padding:18px;           /* space between outer border and nested framed box */
+  }
+
+  /* every nested area is placed inside a framed wrapper to create the inner border */
+  .nested-frame{
+    border:3px solid #222;  /* inner frame */
+    padding:10px;
+    box-sizing:border-box;
+    background: #fafafa;
+  }
+
+  /* actual nested table (borders inside the framed wrapper) */
+  table.nested{
+    width:100%;
+    border-collapse:collapse;
+    margin:0 auto;
+    text-align:center;
+  }
+
+  /* Heading for nested tables (the top small thick header) */
+  .nested thead th{
+    border:2px solid #222;
+    padding:8px 6px;
+    font-size:18px;
+    font-weight:700;
+    background:transparent;
+  }
+
+  /* body rows and cells */
+  .nested th, .nested td{
+    border:2px solid #222;
+    padding:8px 6px;
+    font-size:16px;
+  }
+
+  /* smaller header rows spanning columns */
+  .nested .title-row th{
+    font-size:20px;
+    padding:10px;
+  }
+
+  /* make the inner column headers bold & slightly larger (Column 1 / Column 2) */
+  .inner-headers th{
+    font-weight:700;
+    font-size:16px;
+  }
+
+  /* list styling (center content box but list left aligned) */
+  .nested ul{
+    list-style: disc;
+    padding-left:40px;
+    margin:18px 0;
+    text-align:left;
+  }
+
+  /* black strip cell for Nested Table 4 */
+  .black-cell{
+    background:#000;
+    color:#fff;
+    font-weight:700;
+    padding:10px;
+    text-align:center;
+    font-size:18px;
+  }
+
+  /* spacing to mimic the large empty areas inside outer cells */
+  .spacer{
+    height:36px;
+  }
+
+  /* link look in nested table 3 */
+  .nested a{ color: #2b44b6; text-decoration: underline; font-weight:600; }
+
+  /* tighten/thicken inner boxes visually */
+  .nested td, .nested th { box-shadow: inset 0 0 0 0px rgba(0,0,0,0.0); }
+
+  /* small responsive tweak */
+  @media (max-width:720px){
+    table.outer { font-size:14px; }
+    .nested thead th { font-size:16px; }
+  }
